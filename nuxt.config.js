@@ -4,7 +4,11 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
   srcDir: 'app',
-
+  router: {
+    middleware: [
+      'auth-cookie'
+    ]
+  },
   /*
   ** Headers of the page
   */
@@ -36,7 +40,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '~/assets/common.css'
   ],
 
   /*
